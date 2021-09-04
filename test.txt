@@ -1,0 +1,2 @@
+input.match(
+	/{|}|\[|\]|,|:|".*"|\S+|\d+(\.\d+)?((e|E)(\+|-)?\d+)?|true|TRUE|false|FALSE|null/g).forEach(item => console.log(item))
