@@ -1,5 +1,3 @@
-use std::fs;
-use std::process;
 use regex::{Regex, Captures};
 
 pub mod token;
@@ -100,7 +98,7 @@ impl Component {
                     Regex::new(&word).unwrap(), "LITERAL_CADENA");
 
                 let words_replaced = r_literal_cadena.pattern.replace(
-                    &words, |caps: &Captures| {
+                    &words, |_caps: &Captures| {
                         r_literal_cadena.lexical_component.to_owned()
                     });
 

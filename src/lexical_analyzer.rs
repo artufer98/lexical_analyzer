@@ -1,7 +1,7 @@
 pub mod file;
 pub mod component;
 
-use regex::{Regex, Captures};
+use regex::{Captures};
 use crate::lexical_analyzer::file::File;
 use crate::lexical_analyzer::component::token::Token;
 
@@ -19,7 +19,7 @@ fn convert(words: &str, components: &[Token; 10],
 
     let current_component = &components[current_position];
     let words_replaced = current_component.pattern.replace_all(
-        &words, |caps: &Captures| {
+        &words, |_caps: &Captures| {
             current_component.lexical_component.to_owned()
         });
 
